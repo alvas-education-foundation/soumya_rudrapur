@@ -182,6 +182,7 @@ e.printStackTrace();
 ************************************************
 
 23/05/2020
+5)
 Write a C Program to Display first N Triangular Numbers (Where N is read from the Keyboard)
 
 void triangular_series(int n)
