@@ -1,0 +1,184 @@
+1)
+struct Node
+{
+int data;
+struct Node* next;
+};
+
+pointer to the new head node. /
+struct Node reverse (struct Node head, int k)
+{
+struct Node current = head;
+struct Node next = NULL;
+struct Node prev = NULL;
+int count = 0;
+
+while (current != NULL && count < k) 
+{ 
+    next  = current->next; 
+    current->next = prev; 
+    prev = current; 
+    current = next; 
+    count++; 
+} 
+  
+if (next !=  NULL) 
+   head->next = reverse(next, k);  
+
+return prev; 
+}
+
+void push(struct Node** head_ref, int new_data)
+{
+struct Node* new_node =
+(struct Node*) malloc(sizeof(struct Node));
+
+new_node->data  = new_data; 
+
+new_node->next = (*head_ref);     
+
+(*head_ref)    = new_node; 
+}
+
+void printList(struct Node *node)
+{
+while (node != NULL)
+{
+printf("%d ", node->data);
+node = node->next;
+}
+}
+
+int main(void)
+{
+struct Node* head = NULL;
+push(&head, 8);
+push(&head, 7);
+push(&head, 6);
+push(&head, 5);
+push(&head, 4);
+push(&head, 3);
+push(&head, 2);
+push(&head, 1);
+
+ printf("\nGiven linked list \n"); 
+ printList(head); 
+ head = reverse(head, 2); 
+
+ printf("\nReversed Linked list \n"); 
+ printList(head); 
+
+ return(0); 
+}
+
+*********************************************************************************
+2)
+Python program to exchange the values of two numbers using ^ (exclusive or operator)
+
+x=10
+y=12
+x = x ^ y;
+y = x ^ y;
+x = x ^ y;
+print ("After Swapping: x = ", x, " y =", y
+
+Program 3
+Write Python Program to Reverse a Given Number:
+
+n=int(input("Enter number: "))
+rev=0
+while(n>0):
+dig=n%10
+rev=rev*10+dig
+n=n//10
+print("Reverse of the number:",rev)
+**********************************************************************************************
+3)
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+int data;
+struct node next;
+};
+struct Node reverse(struct Node head,int k)
+{
+struct Node current= head;
+struct Node next= Null;
+struct Node prev= Null;
+int count = 0;
+while(current!=Null && count<k)
+{
+next= current->next;
+current->next = prev;
+prev= current;
+current= next;
+count++;
+}
+if ( next!=Null)
+head->next= reverse( next,k);
+return prev;
+}
+void push( struct Node ==head_ref,int new_data)
+{
+struct Node= new_node= (struct Node) malloc(sizeof(struct Node));
+}
+}
+int main()
+{
+Struct node *prev,*head,*p;
+int n,i;
+printf ("number of elements:");
+scanf("%d",&n);
+head=NULL;
+for(i=0;i<n;i++)
+{
+p=malloc(sizeof(struct node));
+scanf("%d",&p->data);
+p->next=NULL;
+if(head==NULL)
+head=p;
+else
+prev->next=p;
+prev=p;
+}
+return 0;
+}
+*******************************************************************************************************
+4)
+public class PingPong extends Thread {
+static StringBuilder object = new StringBuilder("");
+public static void main(String[] args) throws InterruptedException {
+
+Thread t1 = new PingPong();
+Thread t2 = new PingPong();
+
+t1.setName("\nping");
+t2.setName(" pong");
+
+t1.start();
+t2.start();
+}
+
+@override
+public void run() {
+working();
+}
+
+void working() {
+while (true) {
+synchronized (object) {
+try {
+System.out.print(Thread.currentThread().getName());
+object.notify();
+object.wait();
+} catch (InterruptedException e) {
+e.printStackTrace();
+}
+}
+}
+}
+}
+
+
+
